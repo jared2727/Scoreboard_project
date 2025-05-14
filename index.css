@@ -2,7 +2,9 @@ body {
     margin: 0;
     text-align: center;
     background-color: #111827;
-    font-size: larger;
+    font-size: x-large;
+    margin-bottom: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #home, #guest {
@@ -56,11 +58,16 @@ body {
 .plus-btn {
     padding: 5px;
     margin-top: 5px;
-    border:2px solid #D1D5DB;
+    border: 2px solid #D1D5DB;
     border-radius: 5px;
-    background-color: transparent;
+    background-color:#111827;
     font-family: monospace;
     font-size: large;
+}
+
+.plus-btn:active {
+    background-color:#303030;
+    border: 2px solid transparent;
 }
 
 #reset-div {
