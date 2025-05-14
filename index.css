@@ -8,14 +8,17 @@ body {
 }
 
 #home, #guest {
-    margin-bottom: 31.4px;
+    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
-    /* margin: 10px; */
+    justify-content: space-evenly;
+    /* border: 2px solid white; */
+    /* margin-left: auto;
+    margin-right: auto; */
 }
+
 
 .highlight {
     text-shadow: 0 0 10px rgb(3, 255, 53);
@@ -29,14 +32,9 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    margin-top: -31.4px;
+    /* margin-top: -31.4px; */
 }
 
-/* .highlight:disabled {
-    text-shadow: 0 0 10px white;
-    border: 6px solid white;
-    text-shadow: none;
-} */
 
 .score {
     font-family: monospace;

@@ -1,3 +1,4 @@
+// Declare variables
 let homeScore = document.querySelector("#home-score");
 let guestScore = document.querySelector("#guest-score");
 let add_btn = document.querySelectorAll(".plus-btn");
@@ -12,8 +13,9 @@ let guestHighlight = document.querySelector("#guest");
 let homeHighlight = document.querySelector("#home");
 let winnerTextHome = document.querySelector("#home-winner-text");
 let winnerTextGuest = document.querySelector("#guest-winner-text");
+let result = 0;
 
-
+// Event listeners for point and reset buttons 
 homeBtn.forEach(el => {
     el.addEventListener("click", function () {
     home_clicked = true;
@@ -26,6 +28,7 @@ guestBtn.forEach(el => {
     });
 });
 
+// Reset scores to zero and remove winner indication
 resetBtn.addEventListener("click", function () {
     reset_clicked = true;
     if (reset_clicked) {
@@ -35,22 +38,20 @@ resetBtn.addEventListener("click", function () {
         guestScore.textContent = 0;
         homeHighlight.classList.remove("highlight");
         guestHighlight.classList.remove("highlight");
-        winnerTextHome.style.display = "none";
-        winnerTextGuest.style.display = "none";
+        winnerTextGuest.style.visibility = "hidden";
+        winnerTextHome.style.visibility = "hidden";
     };
 });
 
-
+// Initialize without highlight winner indicator or text
 guestHighlight.classList.remove("highlight");
 homeHighlight.classList.remove("highlight");
-winnerTextGuest.style.display = "none";
-winnerTextHome.style.display = "none";
+winnerTextGuest.style.visibility = "hidden";
+winnerTextHome.style.visibility = "hidden";
 
-// style="text-shadow: none; border: none;
-// homeHighlight.setAttribute("style", "border-color:#FFFFFF;");
-
-let result = 0;
-
+// Listen for clicks on points buttons
+// and parse out the integer from the textContent of the clicked button
+// Add the int to the total points scored and display them in the textContent
 add_btn.forEach(el => {
     el.addEventListener("click", function () {
         result = parseInt(el.textContent.replace(/[^0-9+]/g), '');
@@ -59,8 +60,6 @@ add_btn.forEach(el => {
         console.error("Not a valid number from: ", el.textContent);
         return result
     };
-    
-        
     if (home_clicked) {  
         currentHomeScore += result;
         homeScore.textContent = currentHomeScore;
@@ -71,31 +70,21 @@ add_btn.forEach(el => {
     if (currentGuestScore > currentHomeScore) {
         guestHighlight.classList.add("highlight");  
         homeHighlight.classList.remove("highlight");
-        winnerTextGuest.style.display = "flex";
-        winnerTextHome.style.display = "none";
+        winnerTextGuest.style.visibility = "visible";
+        winnerTextHome.style.visibility = "hidden";
     } else if (currentGuestScore < currentHomeScore) {
         homeHighlight.classList.add("highlight");  
-        guestHighlight.classList.remove("highlight");  
-        winnerTextHome.style.display = "flex";
-        winnerTextGuest.style.display = "none";
+        guestHighlight.classList.remove("highlight"); 
+        winnerTextGuest.style.visibility = "hidden";
+        winnerTextHome.style.visibility = "visible"; 
     } else {
         guestHighlight.classList.remove("highlight");  
         homeHighlight.classList.remove("highlight");
-        winnerTextHome.style.display = "none";
-        winnerTextGuest.style.display = "none";
+        winnerTextGuest.style.visibility = "hidden";
+        winnerTextHome.style.visibility = "hidden";
     }
-    console.log(currentGuestScore);
-    console.log(currentHomeScore);
-    console.log(result);
     });
 });
-
-// if (currentGuestScore != currentHomeScore) {
-//     // currentWinner.setAttribute(".highlight");
-//     currentGuestScore.setAttribute(classList.add(".highlight"))
-// } else if (currentGuestScore = currentHomeScore) {
-//     currentWinner.setAttribute(classList.remove(".highlight"))
-// }
 
 
 
