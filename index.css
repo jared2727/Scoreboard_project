@@ -5,6 +5,8 @@ body {
     font-size: 40px;
     margin-bottom: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#D1D5DB;
+    min-width: 700px;
 }
 
 #home, #guest {
@@ -61,6 +63,7 @@ body {
     background-color:#111827;
     font-family: monospace;
     font-size: xx-large;
+    color:#D1D5DB;
 }
 
 .plus-btn:active {
