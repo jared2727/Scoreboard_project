@@ -6,7 +6,7 @@ body {
     margin-bottom: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:#D1D5DB;
-    min-width: 700px;
+    min-width: 200px;
 }
 
 #home, #guest {
@@ -16,6 +16,7 @@ body {
 .container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     /* border: 2px solid white; */
     /* margin-left: auto;
     margin-right: auto; */
@@ -80,4 +81,5 @@ body {
 #reset-btn {
     font-size: 20px;
     padding: 5px 10px;
+    margin: 20px 10px;
 }
